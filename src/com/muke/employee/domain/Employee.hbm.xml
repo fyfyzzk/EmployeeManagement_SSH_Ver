@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.muke.employee.domain.Employee" table="employee">
+        <id name="eId" column="eId">
+            <generator class="native" />
+        </id>
+
+        <property name="eName" column="eName" length="20" />
+        <property name="eSex" column="eSex" length="10" />
+        <property name="eBirth" column="eBirth" />
+        <property name="eJoinDate" column="eJoinDate" />
+        <property name="eNo" column="eNo" length="20" />
+        <property name="username" column="username" length="20" />
+        <property name="password" column="password" length="20" />
+
+        <!-- 关联关系映射 -->
+        <many-to-one name="department" class="com.muke.employee.domain.Employee" column="dNo" />
+    </class>
+</hibernate-mapping>

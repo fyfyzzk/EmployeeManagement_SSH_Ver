@@ -2,6 +2,7 @@ package com.muke.employee.action;
 
 import com.muke.employee.domain.Employee;
 import com.muke.employee.service.EmployeeService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -35,8 +36,18 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 
 	public String login() {
 		System.out.println("longin done!");
+		//  call service class
 		
+		Employee existEmployee = employeeService.login(employee);
 		
-		return NONE;
+		if (existEmployee == null) {
+			//	login fail
+			this.addActionError("用户名或密码错误");
+			return INPUT;
+		} else {
+			//	login succeed
+			ActionContext.getContext().getSession().put("existEmployee", existEmployee);
+			return SUCCESS;
+		}
 	}
 }

@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebRoot/frame/listEmployee.jsp=UTF-8
 encoding//WebRoot/index.jsp=UTF-8
 encoding//src/com/muke/employee/action/EmployeeAction.java=UTF-8
 encoding//src/com/muke/employee/service/EmployeeService.java=UTF-8

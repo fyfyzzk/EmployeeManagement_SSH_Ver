@@ -60,14 +60,28 @@
 	<bean id="employeeAction" class="com.muke.employee.action.EmployeeAction" scope="prototype" >
 		<property name="employeeService" ref="employeeService" />
 	</bean>
+	
+	<bean id="departmentAction" class="com.muke.employee.action.DepartmentAction" scope="prototype">
+		<property name="departmentService" ref="departmentService" />
+	</bean>
+	
 	<!-- 配置业务层的类 -->
 	<bean id="employeeService" class="com.muke.employee.service.impl.EmployeeServiceImpl">
 		<property name="employeeDao" ref="employeeDao" />
 	</bean>
+	
+	<bean id="departmentService" class="com.muke.employee.service.impl.DepartmentServiceImpl">
+		<property name="departmentDao" ref="departmentDao" />
+	</bean>
+	
 	<!-- 配置DAO的类 -->
 	<bean id="employeeDao" class="com.muke.employee.dao.impl.EmployeeDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	<bean id="departmentDao" class="com.muke.employee.dao.impl.DepartmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>	
 	<!-- 配置事务管理 -->
 	<bean id="transaction" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />

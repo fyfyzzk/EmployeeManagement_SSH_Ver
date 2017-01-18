@@ -15,7 +15,7 @@
 
     d.add('01','-1','员工管理系统');
     d.add('0101','01','人力资源部');
-    d.add('010101','0101','部门管理','listDep.jsp','','right');
+    d.add('010101','0101','部门管理','department_findAll.action','','right');
 
     d.add('010102','0101','员工管理','listEmployee.jsp','','right');
     document.write(d);

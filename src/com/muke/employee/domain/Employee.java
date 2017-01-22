@@ -3,67 +3,64 @@ package com.muke.employee.domain;
 import java.util.Date;
 
 public class Employee {
-    private Integer eId;
-    private String eName;
-    private String eSex;
-    private Date eBirth;
-    private Date eJoinDate;
-    private String eNo;
+    private Integer eid;
+    private String ename;
+    private String sex;
+    private Date birthday;
+    private Date joinDate;
+    private String eno;
     private String username;
     private String password;
 
-    /*  department which employee belongs to */
-    private Department department;
+    public Integer getEid() {
+		return eid;
+	}
 
-    public Integer geteId() {
-        return eId;
-    }
+	public void setEid(Integer eid) {
+		this.eid = eid;
+	}
 
-    public void seteId(Integer eId) {
-        this.eId = eId;
-    }
+	public String getEname() {
+		return ename;
+	}
 
-    public String geteName() {
-        return eName;
-    }
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
 
-    public void seteName(String eName) {
-        this.eName = eName;
-    }
+	public String getSex() {
+		return sex;
+	}
 
-    public String geteSex() {
-        return eSex;
-    }
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 
-    public void seteSex(String eSex) {
-        this.eSex = eSex;
-    }
+	public Date getBirthday() {
+		return birthday;
+	}
 
-    public Date geteBirth() {
-        return eBirth;
-    }
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
 
-    public void seteBirth(Date eBirth) {
-        this.eBirth = eBirth;
-    }
+	public Date getJoinDate() {
+		return joinDate;
+	}
 
-    public Date geteJoinDate() {
-        return eJoinDate;
-    }
+	public void setJoinDate(Date joinDate) {
+		this.joinDate = joinDate;
+	}
 
-    public void seteJoinDate(Date eJoinDate) {
-        this.eJoinDate = eJoinDate;
-    }
+	public String getEno() {
+		return eno;
+	}
 
-    public String geteNo() {
-        return eNo;
-    }
+	public void setEno(String eno) {
+		this.eno = eno;
+	}
 
-    public void seteNo(String eNo) {
-        this.eNo = eNo;
-    }
-
-    public String getUsername() {
+	public String getUsername() {
         return username;
     }
 
@@ -78,6 +75,8 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
+    /*  department which employee belongs to */
+    private Department department;
 
     public Department getDepartment() {
         return department;

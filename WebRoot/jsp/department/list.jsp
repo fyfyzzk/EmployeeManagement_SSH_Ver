@@ -26,15 +26,16 @@
 <br/>
 <table cellspacing="0" border="1" class="table1">
 <thead>
-   <tr><th width="450">部门名称</th><th  width="450">编辑</th></tr>
+   <tr><th width="450">部门名称</th><th  width="450">编辑</th><th  width="450">删除</th></tr>
 </thead>
 <tbody>
 
-<s:iterator value="list">
-<tr>
-<td align="center"><s:property /></td>
-<td align="center"><a href="editDept.jsp"><img src="${ pageContext.request.contextPath }/images/edit.png"/></a></td>
-</tr>
+<s:iterator value="list" var="d">
+	<tr>
+		<td align="center"><s:property value="#d.dname"/></td>
+		<td align="center"><a href="${pageContext.request.contextPath}/department_edit.action?did=<s:property value="#d.did"/>"><img src="${pageContext.request.contextPath}/images/edit.png"/></a></td>
+		<td align="center"><a href="${pageContext.request.contextPath}/department_delete.action?did=<s:property value="#d.did"/>"><img src="${pageContext.request.contextPath}/images/trash.gif"/></a></td>
+	</tr>
 </s:iterator>
 
 </tbody>

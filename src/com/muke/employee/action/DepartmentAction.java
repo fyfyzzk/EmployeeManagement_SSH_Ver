@@ -34,7 +34,7 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
 		PageBean<Department> pageBean = departmentService.findByPage(currPage);
 		//	save pageBean into valueStack
 		for (Department d : pageBean.getList()) {
-			System.out.println("  DepartmentAction : " + d.getdName());
+			System.out.println("  DepartmentAction : " + d.getDname());
 		}
 
 		ActionContext.getContext().getValueStack().push(pageBean);
@@ -50,5 +50,17 @@ public class DepartmentAction extends ActionSupport implements ModelDriven<Depar
 	public String save() {
 		departmentService.save(department);
 		return "saveSuccess";
+	}
+	
+	//	method of editing department
+	public String edit() {
+		department = departmentService.findById(department.getDid());
+		return "editSuccess";
+	}
+	
+	//	method of modifying department
+	public String update() {
+		departmentService.update(department);
+		return "updateSuccess";
 	}
 }

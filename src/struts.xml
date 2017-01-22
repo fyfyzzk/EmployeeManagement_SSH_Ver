@@ -12,6 +12,8 @@
 			<result name="findAll">/jsp/department/list.jsp</result>
 			<result name="saveUI">/jsp/department/addDepartment.jsp</result>
 			<result name="saveSuccess" type="redirectAction">department_findAll.action</result>
+			<result name="editSuccess">/jsp/department/editDepartment.jsp</result>
+			<result name="updateSuccess" type="redirectAction">department_findAll.action</result>
 		</action>
 		
 	</package>

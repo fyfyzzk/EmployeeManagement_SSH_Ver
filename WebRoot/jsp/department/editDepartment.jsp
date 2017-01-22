@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <html>
 <head></head>
 <body>
 <table border="0" width="600px">
 <tr>
-<td align="center" style="font-size:24px; color:#666"> 部门添加</td>
+<td align="center" style="font-size:24px; color:#666"> 编辑部门</td>
 </tr>
 <tr>
 <td align="right" > 
@@ -18,11 +19,12 @@
 <br/>
  <br>
  
-<s:form id="saveForm" action="department_save" method="post" namespace="/" theme="simple">
+<s:form id="saveForm" action="department_update" method="post" namespace="/" theme="simple">
+<s:hidden name="did" value="%{model.did}"/>
 <table style="font-size::16px">
 <tr>
   <td>部门名称：</td>
-  <td><s:textfield name="dname" /></td>
+  <td><s:textfield name="dname" value="%{model.dname}"/></td>
 </tr>
 <tr>
   <td>部门介绍：</td>
@@ -31,7 +33,7 @@
 <tr>
   <td width="10%"></td>
   <td>
-     <s:textarea cols="50" rows="5" name="ddesc" />
+     <s:textarea cols="50" rows="5" name="ddesc" value="%{model.ddesc}"/>
   </td>
 </tr>
 </table>

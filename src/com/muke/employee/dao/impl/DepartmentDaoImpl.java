@@ -35,7 +35,7 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
 		System.out.println(" DepartmentDaoImpl    list : " + list);
 		
 		for (Department t : list) {
-			System.out.println(" DepartmentDaoImpl    list name : " + t.getdName());
+			System.out.println(" DepartmentDaoImpl    list name : " + t.getDname());
 		}
 		
 		return list;
@@ -45,6 +45,18 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
 	public void save(Department department) {
 		// TODO Auto-generated method stub
 		this.getHibernateTemplate().save(department);
+	}
+
+	@Override
+	//	find department by department id
+	public Department findById(Integer did) {
+		return this.getHibernateTemplate().get(Department.class, did);
+	}
+
+	@Override
+	//	Dao modify department method
+	public void update(Department department) {
+		this.getHibernateTemplate().update(department);
 	}
 
 }

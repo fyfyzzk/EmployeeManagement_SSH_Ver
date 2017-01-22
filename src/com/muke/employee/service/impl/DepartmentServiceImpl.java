@@ -11,8 +11,6 @@ import com.muke.employee.service.DepartmentService;
 //Impl class for Department Service
 @Transactional
 public class DepartmentServiceImpl implements DepartmentService {
-	
-	
 	//  inject a department Dao
 	
 	private DepartmentDao departmentDao;
@@ -42,7 +40,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 		List<Department> list = departmentDao.findByPage(begin, pageSize);
 		
 		for (Department t : list) {
-			System.out.println(" DepartmentServiceImpl    list name : " + t.getdName());
+			System.out.println(" DepartmentServiceImpl    list name : " + t.getDname());
 		}
 		
 		
@@ -61,6 +59,14 @@ public class DepartmentServiceImpl implements DepartmentService {
 		departmentDao.save(department);
 	}
 
+	@Override
+	public Department findById(Integer did) {
+		
+		return departmentDao.findById(did);
+	}
 
-
+	@Override
+	public void update(Department department) {
+		departmentDao.update(department);
+	}
 }

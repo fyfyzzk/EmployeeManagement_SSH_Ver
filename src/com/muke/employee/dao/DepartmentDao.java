@@ -11,4 +11,5 @@ public interface DepartmentDao {
 
 	Department findById(Integer did);
 	void update(Department department);
+	void delete(Department department);
 }

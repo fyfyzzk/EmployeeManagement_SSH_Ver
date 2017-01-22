@@ -59,4 +59,10 @@ public class DepartmentDaoImpl extends HibernateDaoSupport implements Department
 		this.getHibernateTemplate().update(department);
 	}
 
+	@Override
+	public void delete(Department department) {
+		// TODO Auto-generated method stub
+		this.getHibernateTemplate().delete(department);
+	}
+
 }

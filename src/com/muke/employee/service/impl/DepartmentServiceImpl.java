@@ -66,7 +66,15 @@ public class DepartmentServiceImpl implements DepartmentService {
 	}
 
 	@Override
+	//	业务曾修改部门的方法
 	public void update(Department department) {
 		departmentDao.update(department);
+	}
+
+	@Override
+	//	service layer delete department function
+	public void delete(Department department) {
+		// TODO Auto-generated method stub
+		departmentDao.delete(department);
 	}
 }

@@ -17,6 +17,6 @@
         <property name="password" column="password" length="20" />
 
         <!-- 关联关系映射 -->
-        <many-to-one name="department" class="com.muke.employee.domain.Department" column="dno" />
+        <many-to-one name="department" class="com.muke.employee.domain.Department" lazy="false" column="dno" />
     </class>
 </hibernate-mapping>

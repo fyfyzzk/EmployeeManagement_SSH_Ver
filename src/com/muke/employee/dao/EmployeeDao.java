@@ -1,6 +1,9 @@
 package com.muke.employee.dao;
 
+import java.util.List;
+
 import com.muke.employee.domain.Employee;
+
 
 
 /*
@@ -11,5 +14,9 @@ import com.muke.employee.domain.Employee;
 public interface EmployeeDao {
 
 	Employee findByUsernameAndPassword(Employee employee);
+
+	List<Employee> findByPage(int begin, int pageSize);
+
+	int findCount();
 
 }

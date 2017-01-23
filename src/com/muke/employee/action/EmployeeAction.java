@@ -1,6 +1,7 @@
 package com.muke.employee.action;
 
 import com.muke.employee.domain.Employee;
+import com.muke.employee.domain.PageBean;
 import com.muke.employee.service.EmployeeService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,7 +16,13 @@ import com.opensymphony.xwork2.ModelDriven;
 public class EmployeeAction extends ActionSupport implements ModelDriven<Employee> {
 	//  模型驱动使用的对象
 	private Employee employee = new Employee();
+	//  当前页数
+	private Integer currPage = 1;
 	
+	public void setCurrPage(Integer currPage) {
+		this.currPage = currPage;
+	}
+
 	@Override
 	public Employee getModel() {
 
@@ -49,5 +56,13 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 			ActionContext.getContext().getSession().put("existEmployee", existEmployee);
 			return SUCCESS;
 		}
+	}
+	
+	//	check out employees infor method
+	public String findAll() {
+		PageBean<Employee> pageBean = employeeService.findByPage(currPage);
+		ActionContext.getContext().getValueStack().push(pageBean);
+		
+		return "findAll";
 	}
 }

@@ -1,6 +1,7 @@
 package com.muke.employee.service;
 
 import com.muke.employee.domain.Employee;
+import com.muke.employee.domain.PageBean;
 
 /*
  * 员工管理的业务曾接口
@@ -10,5 +11,9 @@ import com.muke.employee.domain.Employee;
 public interface EmployeeService {
 
 	Employee login(Employee employee);
+
+	PageBean<Employee> findByPage(Integer currPage);
+
+	void findAll();
 
 }

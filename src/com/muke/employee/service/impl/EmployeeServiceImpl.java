@@ -2,6 +2,8 @@ package com.muke.employee.service.impl;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.muke.employee.dao.EmployeeDao;
 import com.muke.employee.domain.Employee;
 import com.muke.employee.domain.PageBean;
@@ -13,7 +15,7 @@ import com.muke.employee.service.EmployeeService;
  * 
  * Employee implementation
  * */
-
+@Transactional
 public class EmployeeServiceImpl implements EmployeeService {
 	private EmployeeDao employeeDao;
 
@@ -52,9 +54,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public void findAll() {
-		// TODO Auto-generated method stub
-		
+	//	service layer:  to save employee method
+	public void save(Employee employee) {
+		employeeDao.save(employee);
+	}
+
+	@Override
+	public Employee findById(Integer eid) {
+		return employeeDao.findById(eid);
+	}
+
+	@Override
+	public void update(Employee employee) {
+		employeeDao.update(employee);
 	}
 	
 }

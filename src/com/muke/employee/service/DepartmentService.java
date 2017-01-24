@@ -1,6 +1,8 @@
 package com.muke.employee.service;
 
 
+import java.util.List;
+
 import com.muke.employee.domain.Department;
 import com.muke.employee.domain.PageBean;
 
@@ -15,5 +17,7 @@ public interface DepartmentService {
 	void update(Department department);
 
 	void delete(Department department);
+
+	List<Department> findAll();
 	
 }

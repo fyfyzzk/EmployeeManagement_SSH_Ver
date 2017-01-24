@@ -22,7 +22,7 @@
 <td align="center" style="font-size:24px; color:#666"> 员工管理</td>
 </tr>
 <tr>
-<td align="right" > <a href="addEmployee.html">添加</a></td>
+<td align="right" > <a href="${ pageContext.request.contextPath }/employee_saveUI.action">添加</a></td>
 </tr>
 </table>
 <br/>
@@ -49,7 +49,7 @@
 <td align="center"><s:date name="#e.birthday" format="yyyy-MM-dd"/></td>
 <td align="center"><s:date name="#e.joinDate" format="yyyy-MM-dd"/></td>
 <td align="center"><s:property value="#e.department.dname"/></td>
-<td align="center"><a href="editEmployee.html"><img src="${ pageContext.request.contextPath }/images/edit.png"/></a></a></td>
+<td align="center"><a href="${ pageContext.request.contextPath }/employee_edit.action?eid=<s:property value="#e.eid"/>"><img src="${ pageContext.request.contextPath }/images/edit.png"/></a></td>
 </tr>
 </s:iterator>
 
@@ -64,7 +64,7 @@
    <span>总记录数：<s:property value="totalCount"/>；每页显示：<s:property value="pageSize"/></span>&nbsp;&nbsp;
    <apan>
    <s:if test="currPage != 1">
-       <a href="${pageContext.request.contextPath}/employee_findAll.action?currPage=1"/>">[首页]</a>&nbsp;&nbsp;
+       <a href="${pageContext.request.contextPath}/employee_findAll.action?currPage=1">[首页]</a>&nbsp;&nbsp;
        <a href="${pageContext.request.contextPath}/employee_findAll.action?currPage=<s:property value="currPage-1"/>">[上一页]</a>&nbsp;&nbsp;
    </s:if>
    <s:if test="currPage != totalPage">

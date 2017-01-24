@@ -59,6 +59,7 @@
 	<!-- 配置Action的类 -->
 	<bean id="employeeAction" class="com.muke.employee.action.EmployeeAction" scope="prototype" >
 		<property name="employeeService" ref="employeeService" />
+		<property name="departmentService" ref="departmentService" />
 	</bean>
 	
 	<bean id="departmentAction" class="com.muke.employee.action.DepartmentAction" scope="prototype">

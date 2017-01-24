@@ -19,4 +19,10 @@ public interface EmployeeDao {
 
 	int findCount();
 
+	void save(Employee employee);
+
+	Employee findById(Integer eid);
+
+	void update(Employee employee);
+
 }

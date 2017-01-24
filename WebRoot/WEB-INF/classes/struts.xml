@@ -6,6 +6,10 @@
 			<result name="input">/index.jsp</result>
 			<result name="success" type="redirect">/frame.jsp</result>
 			<result name="findAll">/jsp/employee/listEmployee.jsp</result>
+			<result name="saveUI">/jsp/employee/addEmployee.jsp</result>
+			<result name="saveSuccess" type="redirectAction">employee_findAll.action</result>
+			<result name="editSuccess">/jsp/employee/editEmployee.jsp</result>
+			<result name="updateSuccess" type="redirectAction">employee_findAll.action</result>
 		</action>
 		
 		

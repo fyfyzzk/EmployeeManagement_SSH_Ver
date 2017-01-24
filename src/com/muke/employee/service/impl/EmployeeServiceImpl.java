@@ -68,5 +68,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void update(Employee employee) {
 		employeeDao.update(employee);
 	}
+
+	@Override
+	//	service layer   delete employee method
+	public void delete(Employee toDelEmployee) {
+		employeeDao.delete(toDelEmployee);
+	}
 	
 }

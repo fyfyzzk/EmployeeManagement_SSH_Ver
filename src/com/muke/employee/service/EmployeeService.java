@@ -19,4 +19,6 @@ public interface EmployeeService {
 	Employee findById(Integer eid);
 
 	void update(Employee employee);
+
+	void delete(Employee toDelEmployee);
 }

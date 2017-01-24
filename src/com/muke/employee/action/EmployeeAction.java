@@ -102,4 +102,12 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 		employeeService.update(employee);
 		return "updateSuccess";
 	}
+	
+	//	delete employee method
+	public String delete() {
+		Employee toDelEmployee = employeeService.findById(employee.getEid());
+		employeeService.delete(toDelEmployee);
+		
+		return "deleteSuccess";
+	}
 }

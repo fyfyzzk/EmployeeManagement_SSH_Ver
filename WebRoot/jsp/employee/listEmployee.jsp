@@ -38,6 +38,7 @@
 <td align="center">入职时间</td>
 <td align="center">所属部门</td>
 <td align="center">编辑</td>
+<td align="center">delete</td>
 </tr>
 </thead>
 <tbody>
@@ -50,6 +51,7 @@
 <td align="center"><s:date name="#e.joinDate" format="yyyy-MM-dd"/></td>
 <td align="center"><s:property value="#e.department.dname"/></td>
 <td align="center"><a href="${ pageContext.request.contextPath }/employee_edit.action?eid=<s:property value="#e.eid"/>"><img src="${ pageContext.request.contextPath }/images/edit.png"/></a></td>
+<td align="center"><a href="${ pageContext.request.contextPath }/employee_delete.action?eid=<s:property value="#e.eid"/>"><img src="${ pageContext.request.contextPath }/images/trash.gif"/></a></td>
 </tr>
 </s:iterator>
 

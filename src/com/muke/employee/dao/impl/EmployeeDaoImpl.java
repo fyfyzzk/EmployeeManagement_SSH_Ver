@@ -64,8 +64,15 @@ public class EmployeeDaoImpl extends HibernateDaoSupport implements EmployeeDao 
 	}
 
 	@Override
+//	DAO  update employee method
 	public void update(Employee employee) {
 		this.getHibernateTemplate().update(employee);
+	}
+
+	@Override
+	//	DAO  delete employee method
+	public void delete(Employee toDelEmployee) {
+		this.getHibernateTemplate().delete(toDelEmployee);
 	}
 	
 }
